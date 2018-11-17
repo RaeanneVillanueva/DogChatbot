@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var dogDescription = mongoose.model('dogDescription');
 
 exports.processRequest = function(req, res){
-    if(req.body.result.action == "tell.about"){
+    if(req.body.result.action == "dogBreed"){
         getDogDescription(req, res)
     }
 };
