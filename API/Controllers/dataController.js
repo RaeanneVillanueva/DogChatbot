@@ -23,15 +23,15 @@ function getDogDescription(req,res)
             return res.json({
                 speech: 'Something went wrong!',
                 displayText: 'Something went wrong!',
-                source: 'team info'
+                source: 'dogDescription'
             });
             }
             if (breedExists)
             {
             return res.json({
-                    speech: teamExists.description,
+                    speech: breedExists.description,
                     displayText: teamExists.description,
-                    source: 'team info'
+                    source: 'dogDescription'
                 });
             }
             else {
