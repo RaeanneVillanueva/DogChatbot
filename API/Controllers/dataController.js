@@ -30,7 +30,7 @@ function getDogDescription(req,res)
             {
             return res.json({
                     speech: breedExists.description,
-                    displayText: teamExists.description,
+                    displayText: breedExists.description,
                     source: 'dogDescription'
                 });
             }
