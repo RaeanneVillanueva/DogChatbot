@@ -4,17 +4,17 @@ var mongoose = require('mongoose');
 var dogDescription = mongoose.model('dogDescription');
 
 exports.processRequest = function(req, res){
-    if(req.body.result.action == "dogBreed"){
+    if(req.body.action == "dogBreed"){
         getDogDescription(req, res)
     }
 };
 
 function getDogDescription(req,res)
 {
-    let breedSearched = req.body.result &&
-     req.body.result.parameters && 
-     req.body.result.parameters.dogBreed ? 
-     req.body.result.parameters.dogBreed : 'Unknown';
+    let breedSearched = req.body &&
+     req.body.parameters && 
+     req.body.parameters.dogBreed ? 
+     req.body.parameters.dogBreed : 'Unknown';
     
     dogDescription.findOne({dogBreed: breedSearched},function(err, breedExists)
         {
@@ -36,8 +36,8 @@ function getDogDescription(req,res)
             }
             else {
             return res.json({
-                    speech: 'Currently I am not having information about this breed',
-                    displayText: 'Currently I am not having information about this breed',
+                    speech: 'I currently have no information about this breed',
+                    displayText: 'I have no information about this breed',
                     source: 'dogDescription'
                 });
             }
