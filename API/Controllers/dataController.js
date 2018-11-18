@@ -15,19 +15,31 @@ function getDogDescription(req,res)
      req.body.result.parameters && 
      req.body.result.parameters.dogBreed ? 
      req.body.result.parameters.dogBreed : 'Unknown';
-
-    var dogExists = dogDescription.findOne({dogBreed:breedSearched});
-
-    if(dogExists){
-        return res.json({
-            speech : dogExists.description,
-            displayText : dogExists.description,
-            source : 'dogDescription'
+    
+    dogDescription.findOne({breed: breedSearched},function(err, breedExists)
+        {
+            if (err)
+            {
+            return res.json({
+                speech: 'Something went wrong!',
+                displayText: 'Something went wrong!',
+                source: 'dogDescription'
+            });
+            }
+            if (breedExists)
+            {
+            return res.json({
+                    speech: breedExists.description,
+                    displayText: breedExists.description,
+                    source: 'dogDescription'
+                });
+            }
+            else {
+            return res.json({
+                    speech: 'Currently I am not having information about this breed',
+                    displayText: 'Currently I am not having information about this breed',
+                    source: 'dogDescription'
+                });
+            }
         });
-    }else{
-        return res.json({
-            speech : 'Sorry, I do not have information about this breed yet!',
-            displayText: 'Sorry, I do not have information about this breed yet!',
-            source : 'dogDescription'
-        });
-    }
+}
