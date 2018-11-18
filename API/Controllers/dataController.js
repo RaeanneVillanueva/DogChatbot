@@ -36,8 +36,8 @@ function getDogDescription(req, res) {
             });
         } else {
             return res.json({
-                speech: 'Currently I am not having information about this breed',
-                displayText: 'Currently I am not having information about this breed',
+                speech: 'I currently have no information about this breed',
+                displayText: 'I currently have information about this breed',
                 source: 'dogDescription'
             });
         }
