@@ -37,7 +37,7 @@ function getDogDescription(req,res)
             else {
             return res.json({
                     speech: 'I currently have no information about this breed',
-                    displayText: 'I have no information about this breed',
+                    displayText: 'I currently have no information about this breed',
                     source: 'dogDescription'
                 });
             }
