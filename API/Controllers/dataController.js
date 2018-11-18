@@ -16,7 +16,7 @@ function getDogDescription(req,res)
      req.body.result.parameters.dogBreed ? 
      req.body.result.parameters.dogBreed : 'Unknown';
     
-    dogDescription.findOne({breed: breedSearched},function(err, breedExists)
+    dogDescription.findOne({dogBreed: breedSearched},function(err, breedExists)
         {
             if (err)
             {
