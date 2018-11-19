@@ -21,25 +21,25 @@ function getDogDescription(req, res) {
         }
     }, function (err, breedExists) {
         if (err) {
-            return res.json({
+            return res.send(json.stringify({
                 speech: 'Something went wrong!',
                 displayText: 'Something went wrong!',
                 source: 'dogDescription'
-            });
+            }));
         }
 
         if (breedExists) {
-            return res.json({
+            return res.send(json.stringify({
                 speech: breedExists.description,
                 displayText: breedExists.description,
                 source: 'dogDescription'
-            });
+            }));
         } else {
-            return res.json({
+            return res.send(json.stringify({
                speech: 'I currently have no information about this breed',
                displayText: 'I currently have information about this breed',
                source: 'dogDescription'
-            });
+            }));
         }
     });
 }
