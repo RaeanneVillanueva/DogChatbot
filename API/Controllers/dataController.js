@@ -26,7 +26,7 @@ function getDogDescription(req, res) {
                 displayText: 'Something went wrong!',
                 source: 'dogDescription'*/
                 speech: "Something went wrong!",
-                fulfillment_text : "Something went wrong!",
+                fulfillmentText : "Something went wrong!",
                 source: "dogDescription"
                 
             });
@@ -37,8 +37,8 @@ function getDogDescription(req, res) {
                 /*speech: breedExists.description,
                 displayText: breedExists.description,
                 source: 'dogDescription'*/
-               speech: "breedExist.description", 
-               fulfillmentText: "breedExist.description",
+               speech: breedExist.description, 
+               fulfillmentText: breedExist.description,
                source: "dogDescription"
             });
         } else {
@@ -46,7 +46,7 @@ function getDogDescription(req, res) {
                /*speech: 'I currently have no information about this breed',
                displayText: 'I currently have information about this breed',
                source: 'dogDescription'*/
-               speech: "I currently have no information about this breed", 
+               speech: "I currently have no information about this breed.", 
                fulfillmentText: "I currently have no information about this breed.",
                source: "dogDescription"
             });
