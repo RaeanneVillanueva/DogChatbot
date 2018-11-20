@@ -36,7 +36,7 @@ function getDogDescription(req, res) {
                 /*speech: breedExists.description,
                 displayText: breedExists.description,
                 source: 'dogDescription'*/
-               fulfillmentText: breedExist.description,
+               fulfillmentMessages: breedExist.description,
                source: "dogDescription"
             });
         } else {
