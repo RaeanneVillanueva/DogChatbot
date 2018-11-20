@@ -11,6 +11,6 @@ module.exports = function (app) {
         res.send('We are happy to see you');
     });
 
-    app.route('/webhook').get(dataController.processRequest);
+    app.route('/webhook').post(dataController.processRequest);
 
 };
