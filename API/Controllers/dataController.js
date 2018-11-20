@@ -22,30 +22,23 @@ function getDogDescription(req, res) {
     }, function (err, breedExists) {
         if (err) {
             return res.json({
-               /* speech: 'Something went wrong!',
+                speech: 'Something went wrong!',
                 displayText: 'Something went wrong!',
-                source: 'dogDescription'*/
-                fulfillmentText : "Something went wrong!",
-                source: "dogDescription"
-                
+                source: 'dogDescription'
             });
         }
 
         if (breedExists) {
             return res.json({
-                /*speech: breedExists.description,
+                speech: breedExists.description,
                 displayText: breedExists.description,
-                source: 'dogDescription'*/
-               fulfillmentMessages: breedExist.description,
-               source: "dogDescription"
+                source: 'dogDescription'
             });
         } else {
             return res.json({
-               /*speech: 'I currently have no information about this breed',
+               speech: 'I currently have no information about this breed',
                displayText: 'I currently have information about this breed',
-               source: 'dogDescription'*/
-               fulfillmentText: "I currently have no information about this breed.",
-               source: "dogDescription"
+               source: 'dogDescription'
             });
         }
     });
